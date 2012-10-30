@@ -107,7 +107,7 @@ to be confirmed via e-mail or whether a user should be "locked" if log-in is
 attempted too many times with wrong passwords. 
 
 Usually, when some command we run creates db-migrations file, we'll need to
-go through the migration process. This is done by calling the smple command:
+go through the migration process. This is done by calling the simple command:
 
     rake db:migrate
 
@@ -153,7 +153,7 @@ for first and last names. All we need to do is open
 `app/views/devise/registration/new.html.erb` and make the following additions
 right above the similar lines for 'email':
 
-    ## app/views/devise/registration/new.html.erb
+    ## app/views/devise/registrations/new.html.erb
     #
     ...
     <div><%= f.label :first_name %><br />
@@ -179,8 +179,8 @@ now if you run the server and open up
 [http://localhost:3000/users/sign\_up](http://localhost:3000/users/sign_up),
 you should be able to input your first and last names.
 
-Our only remaining issue is that after signing-in, we're faced with the defailt
-"New Rails App" page. Although this could arguable be a decent front-page for
+Our only remaining issue is that after signing-in, we're faced with the default
+"New Rails App" page. Although this could arguably be a decent front-page for
 bookface, our purposes are better served by removing this `index.html` file and
 creating  our own front page (we can delete the sample page by running
 `rm public/index.html`).
@@ -226,7 +226,7 @@ your basic empty html page. The line that reads `<%= yield %>` is a placeholder
 for the specific page the user is trying to view. 
 
 Our goal is to add a sign-out, sign-in and a register buttons on every page.
-We also need to add some logic to determite when a user is or isn't signed-in.
+We also need to add some logic to determine when a user is or isn't signed-in.
 To do this we make tho following addition into the `<body>` of our document,
 any addition before the "yield" statement will appear at the top of our pages
 and below the "yield" statement will appear at the bottom:
